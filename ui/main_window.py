@@ -459,7 +459,8 @@ class MainWindow(QMainWindow):
                 + type(exc).__name__
             )
             self.reason_text.setPlainText(
-                repr(exc)
+                f"{type(exc).__name__}: {exc}\n\n"
+                "The live vision pipeline stopped before candle detection."
             )
 
     def _update_current(self, detection):
